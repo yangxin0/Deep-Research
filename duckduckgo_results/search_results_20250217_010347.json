@@ -1,0 +1,32 @@
+{
+  "queries": [
+    "future cost structure of ASICs 20232028"
+  ],
+  "results": [
+    {
+      "url": "https://assets.asics.com/system/libraries/3865/Consolidated+Financial+Statements+and+Auditor's+Report+2023.pdf",
+      "title": "PDF",
+      "description": "PDF",
+      "snippets": [
+        "expected to reduce the amount of future tax payments. The business plan, which is the basis for future taxable income, includes the policy of the Mid-term Plan 2026 and the sales forecasts and the cost control forecast of selling, general and administrative expenses under the current business environment and the future outlook, is affected by key"
+      ]
+    },
+    {
+      "url": "https://www.morningstar.com/company-reports/1251252-asics-midterm-plan-fair-value-estimate-up-as-near-term-outlook-improves",
+      "title": "Asics' Midterm Plan: Fair Value Estimate Up as Near ... - Morningstar",
+      "description": "Asics' Midterm Plan: Fair Value Estimate Up as Near ... - Morningstar",
+      "snippets": [
+        "Our fair value estimate for Asics is JPY 2,100 per share, based on the assumption of a 6.1% WACC. We expect the company's sales growth to slow down gradually from 2025, as the retro trend that ..."
+      ]
+    },
+    {
+      "url": "https://www.morningstar.com/company-reports/1253495-asics-midterm-plan-fair-value-estimate-up-17-as-near-term-outlook-improves",
+      "title": "Asics' Midterm Plan: Fair Value Estimate Up 17% as Near ... - Morningstar",
+      "description": "Asics' Midterm Plan: Fair Value Estimate Up 17% as Near ... - Morningstar",
+      "snippets": [
+        "We increase Asics' fair value estimate by 17% to JPY 2,100 per share, after we raise our earnings forecasts by an average of 36% for 2025-28, following the company's revised 2026 midterm plan ..."
+      ]
+    }
+  ],
+  "total_results": 3
+}

@@ -121,6 +121,14 @@ def setup_dspy_model(model_name: str) -> dspy.LM:
                 'temperature': 1.0,
                 'top_p': 0.9
             }
+        },
+        'deepseek-v3': {
+            'model_path': 'openai/DeepSeek-V3',
+            'kwargs': {
+                'api_key': os.getenv("DEEPSEEK_API_KEY"),
+                'temperature': 1.0,
+                'top_p': 0.9
+            }
         }
     }
     

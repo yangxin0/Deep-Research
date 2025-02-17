@@ -7,7 +7,7 @@ scripts_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.extend([project_root, scripts_dir])
 
 from agentic_research import STORMARRunnerArguments, STORMARRunner, STORMARLMConfigs
-from agentic_research.rm import YouRM
+from agentic_research.rm import YouRM, DuckDuckGoSearchRM
 import dspy
 import litellm
 import json
@@ -40,6 +40,9 @@ def agentic_ds(topic: str, model_name: str, tools: list = []):
         ydc_api_key=os.getenv('YDC_API_KEY'), 
         k=engine_args.search_top_k
     )
+    # rm = DuckDuckGoSearchRM(
+    #     k=engine_args.search_top_k
+    # )
 
     runner = STORMARRunner(engine_args, lm_configs, rm, tools = tools)
 

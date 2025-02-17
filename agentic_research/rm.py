@@ -852,6 +852,28 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
                     print(f"Error occurs when processing {result=}: {e}\n")
                     print(f"Error occurs when searching query {query}: {e}")
 
+                # Save results to file
+        
+        import json
+        from datetime import datetime
+        
+        # Create results directory if it doesn't exist
+        os.makedirs('./duckduckgo_results', exist_ok=True)
+        
+        # Generate filename with timestamp
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f'duckduckgo_results/search_results_{timestamp}.json'
+        
+        # Save results to JSON file
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump({
+                'queries': queries,
+                'results': collected_results,
+                'total_results': len(collected_results)
+            }, f, indent=2, ensure_ascii=False)
+            
+        print(f"\nResults saved to {filename}")
+        print(f"Total results found: {len(collected_results)}")        
         return collected_results
 
 
