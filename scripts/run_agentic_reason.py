@@ -129,7 +129,7 @@ def main():
 
     if args.deep_research:
         tools = [code_tool, search_tool]
-        agentic_ds(topic=query, model_name=args.remote_model, tools=tools)
+        agentic_ds(topic=query, model_name=args.remote_model, search_engine=args.search_engine, tools=tools)
         return
     # Main loop until all sequences are finished or maximum turns reached
     while True:

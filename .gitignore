@@ -46,6 +46,8 @@ local_mem/
 data/
 
 test*
+!testing_util.py
 
 data_download.py
 book.txt
+duckduckgo_results/

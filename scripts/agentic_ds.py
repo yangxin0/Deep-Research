@@ -7,12 +7,12 @@ scripts_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.extend([project_root, scripts_dir])
 
 from agentic_research import STORMARRunnerArguments, STORMARRunner, STORMARLMConfigs
-from agentic_research.rm import YouRM, DuckDuckGoSearchRM
+from agentic_research.rm import YouRM, DuckDuckGoSearchRM, BingSearch
 import dspy
 import litellm
 import json
 from utils.remote_llm import setup_dspy_model
-def agentic_ds(topic: str, model_name: str, tools: list = []):
+def agentic_ds(topic: str, model_name: str, search_engine: str, tools: list = []):
     
     # Set LiteLLM to debug mode using the new recommended approach
     os.environ["LITELLM_LOG"] = "DEBUG"
@@ -36,13 +36,20 @@ def agentic_ds(topic: str, model_name: str, tools: list = []):
     )
 
     # Initialize retrieval model and runner
-    rm = YouRM(
-        ydc_api_key=os.getenv('YDC_API_KEY'), 
-        k=engine_args.search_top_k
-    )
-    # rm = DuckDuckGoSearchRM(
-    #     k=engine_args.search_top_k
-    # )
+    if search_engine == 'ydc':
+        rm = YouRM(
+            ydc_api_key=os.getenv('YDC_API_KEY'), 
+            k=engine_args.search_top_k
+        )
+    elif search_engine == 'ddg':
+        rm = DuckDuckGoSearchRM(
+            k=engine_args.search_top_k
+        )
+    elif search_engine == 'bing':
+        rm = BingSearch(
+            bing_search_api_key=os.getenv('BING_SUBSCRIPTION_KEY'),
+            k=engine_args.search_top_k
+        )
 
     runner = STORMARRunner(engine_args, lm_configs, rm, tools = tools)
 

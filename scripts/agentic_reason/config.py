@@ -168,6 +168,13 @@ def parse_args():
         help="Whether to use deep research for reasoning."
     )
 
+    parser.add_argument(
+        '--search_engine',
+        type=str,
+        default='ydc',
+        help="Search engine to use."
+    )
+
     args = parser.parse_args()
     
     # Validate that either model_path or remote_model is provided
